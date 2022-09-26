@@ -11,8 +11,8 @@ import os
 import numpy as np
 
 log_dir = os.getcwd()+'/log'
-task_list = ["halfcheetah", "walker2d", "hopper"]
-data_list = ["-medium-v2", "-medium-expert-v2","-medium-replay-v2","-random-v2"]
+task_list = ["hopper"]#["halfcheetah", "walker2d", "hopper"]
+data_list = ["-medium-expert-v2"]#["-medium-v2", "-medium-expert-v2","-medium-replay-v2","-random-v2"]
 
 
 file_names = os.listdir(log_dir)
@@ -41,8 +41,8 @@ args = get_args()
 
 for idx,task in enumerate(total_name):
   print(task)
-  log = logger(task[:-6], './log_qbc', iter=target_epoch_list[idx])
-  env = gym.make(task[:-10])
+  log = logger(task[:-6], './log_qbc', iter=idx) #target_epoch_list[idx]+
+  env = gym.make(task[:-11])
 
   state_dim = env.observation_space.shape[0]
   action_dim = env.action_space.shape[0]

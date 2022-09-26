@@ -8,7 +8,7 @@ from Utils.arguments import get_args
 import d4rl
 from Utils.utils import d4rl_dataset, Eval, logger
 
-data_list = ["-medium-v2", "-medium-expert-v2","-medium-replay-v2","-random-v2"]
+data_list = ["-medium-expert-v2"] #["-medium-v2", "-medium-expert-v2","-medium-replay-v2","-random-v2"]
 args = get_args()
 
 for data_ in data_list:
